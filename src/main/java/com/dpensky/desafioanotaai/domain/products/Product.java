@@ -14,6 +14,13 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 public class Product {
+    public Product(ProductDTO productData) {
+        this.title = productData.title();
+        this.description = productData.description();
+        this.ownerId = productData.ownerId();
+        this.price = productData.price();
+        // this.category = productData.category();
+    }
     @Id
     private String id;
     private String title;

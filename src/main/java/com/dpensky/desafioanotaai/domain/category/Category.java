@@ -12,6 +12,11 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 public class Category {
+    public Category(CategoryDTO categoryData) {
+        this.title = categoryData.title();
+        this.description = categoryData.description();
+        this.ownerId = categoryData.ownerId();
+    }
     @Id
     private String id;
     private String title;
