@@ -1,0 +1,196 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "MARKETPLACE",
+    "dateExported": "2024-01-17T16:49:00.707Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "7287b4ea-37b7-4c5e-9fd2-956b71441a13",
+            "name": "Product",
+            "containerId": "",
+            "created": "2024-01-17T16:11:09.572Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "e786b4fc-7357-411b-b715-22f959500ad3",
+            "name": "Category",
+            "containerId": "",
+            "created": "2024-01-17T16:11:09.573Z",
+            "sortNum": 20000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "c9d9ba0c-499d-4f80-9a77-4adcb487559b",
+            "colId": "eba25818-338c-4d21-b727-1963204251c5",
+            "containerId": "7287b4ea-37b7-4c5e-9fd2-956b71441a13",
+            "name": "GET ALL PRODUCT",
+            "url": "{{url}}/api/product",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-01-17T16:11:09.572Z",
+            "modified": "2024-01-17T16:35:24.981Z",
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "insomnia/8.4.5"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "d8ad7ad7-0463-497b-8ee1-e48b1e14d45b",
+            "colId": "eba25818-338c-4d21-b727-1963204251c5",
+            "containerId": "7287b4ea-37b7-4c5e-9fd2-956b71441a13",
+            "name": "DELETE PRODUCT",
+            "url": "{{url}}/api/product/65a804c5f99ae67d296c9e40",
+            "method": "DELETE",
+            "sortNum": 20000,
+            "created": "2024-01-17T16:11:09.573Z",
+            "modified": "2024-01-17T16:48:20.088Z",
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "insomnia/8.4.5"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "b34dc91e-fb11-4c5b-9373-c667e9bd2a6e",
+            "colId": "eba25818-338c-4d21-b727-1963204251c5",
+            "containerId": "7287b4ea-37b7-4c5e-9fd2-956b71441a13",
+            "name": "CREATE PRODUCT",
+            "url": "{{url}}/api/product",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2024-01-17T16:11:09.574Z",
+            "modified": "2024-01-17T16:48:05.289Z",
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "insomnia/8.4.5"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n\t\t\"title\": \"Produto 2 para postar no tópico\",\n\t\t\"description\": \"produto muito mais legal\",\n\t\t\"ownerId\": \"4444445\",\n\t\t\"categoryId\": \"65a80196f99ae67d296c9e38\",\n\t\t\"price\": 1234\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "64323cf9-00a6-4029-aa74-4554cf2da57c",
+            "colId": "eba25818-338c-4d21-b727-1963204251c5",
+            "containerId": "7287b4ea-37b7-4c5e-9fd2-956b71441a13",
+            "name": "UPDATE PRODUCT",
+            "url": "{{url}}/api/product/65a80244f99ae67d296c9e39",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2024-01-17T16:11:09.575Z",
+            "modified": "2024-01-17T16:45:25.197Z",
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "insomnia/8.4.5"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n\t\t\"title\": \"Produto atualizado\",\n\t\t\"description\": \"descricao atualizada\",\n\t\t\"ownerId\": \"4444444\",\n\t\t\"categoryId\": \"65a7c13da6e88e22ac92feb8\",\n\t\t\"price\": 1005\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "3e1750fa-5916-4ba1-97e7-dfbdd6c7902f",
+            "colId": "eba25818-338c-4d21-b727-1963204251c5",
+            "containerId": "e786b4fc-7357-411b-b715-22f959500ad3",
+            "name": "GET ALL CATEGORY",
+            "url": "{{url}}/api/category",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2024-01-17T16:11:09.576Z",
+            "modified": "2024-01-17T16:16:57.437Z",
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "insomnia/8.4.5"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "7e92af40-2ac1-498a-956f-9af02e8b8b7a",
+            "colId": "eba25818-338c-4d21-b727-1963204251c5",
+            "containerId": "e786b4fc-7357-411b-b715-22f959500ad3",
+            "name": "DELETE CATEGORY",
+            "url": "{{url}}/api/category/65a7c1d8a6e88e22ac92feb9",
+            "method": "DELETE",
+            "sortNum": 60000,
+            "created": "2024-01-17T16:11:09.577Z",
+            "modified": "2024-01-17T16:33:17.064Z",
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "insomnia/8.4.5"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "6e557129-bbbd-4964-89b8-d77e54d0ea08",
+            "colId": "eba25818-338c-4d21-b727-1963204251c5",
+            "containerId": "e786b4fc-7357-411b-b715-22f959500ad3",
+            "name": "UPDATE CATEGORY",
+            "url": "{{url}}/api/category/65a7c1d8a6e88e22ac92feb9",
+            "method": "PUT",
+            "sortNum": 70000,
+            "created": "2024-01-17T16:11:09.578Z",
+            "modified": "2024-01-17T16:28:26.995Z",
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "insomnia/8.4.5"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n\t\t\"title\": \"Oieeee\",\n\t\t\"description\": \"kkkk\",\n\t\t\"ownerId\": \"4444445\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "7c0b32d5-b7f6-43d8-8ff5-c20a64a5fb0d",
+            "colId": "eba25818-338c-4d21-b727-1963204251c5",
+            "containerId": "e786b4fc-7357-411b-b715-22f959500ad3",
+            "name": "CREATE CATEGORY",
+            "url": "{{url}}/api/category",
+            "method": "POST",
+            "sortNum": 80000,
+            "created": "2024-01-17T16:11:09.579Z",
+            "modified": "2024-01-17T16:34:29.406Z",
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "insomnia/8.4.5"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n\t\t\"id\": \"123\",\n\t\t\"title\": \"Teste 3\",\n\t\t\"description\": \"categoria 3 melhor de todas\",\n\t\t\"ownerId\": \"44444447\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}
