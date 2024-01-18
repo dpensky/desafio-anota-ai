@@ -10,24 +10,30 @@ import com.dpensky.desafioanotaai.domain.products.Product;
 import com.dpensky.desafioanotaai.domain.products.ProductDTO;
 import com.dpensky.desafioanotaai.domain.products.exceptions.ProductNotFoundException;
 import com.dpensky.desafioanotaai.repositories.ProductRepository;
+import com.dpensky.desafioanotaai.services.aws.AwsSnsService;
+import com.dpensky.desafioanotaai.services.aws.MessageDTO;
 
 @Service
 public class ProductService {
 
-    private ProductRepository productRepository;
-    private CategoryService categoryService;
+    private final ProductRepository productRepository;
+    private final CategoryService categoryService;
+    private final AwsSnsService snsService;
 
-    public ProductService(ProductRepository repository, CategoryService categoryRepository) {
+    public ProductService(ProductRepository repository, CategoryService categoryRepository, AwsSnsService snsService) {
         this.productRepository = repository;
         this.categoryService = categoryRepository;
+        this.snsService = snsService;
     }
 
     public Product insert(ProductDTO productData) {
-        Category category = this.categoryService.getById(productData.categoryId())
+        Category category = this.categoryService
+                .getById(productData.categoryId())
                 .orElseThrow(CategoryNotFoundException::new);
         Product newProduct = new Product(productData);
         newProduct.setCategory(category);
         this.productRepository.save(newProduct);
+        this.snsService.publish(new MessageDTO(newProduct.getOwnerId()));
         return newProduct;
     }
 
@@ -49,6 +55,7 @@ public class ProductService {
         if (productData.price() != null)
             product.setPrice(productData.price());
         this.productRepository.save(product);
+        this.snsService.publish(new MessageDTO(product.getOwnerId()));
         return product;
     }
 
